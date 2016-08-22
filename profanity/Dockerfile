@@ -9,7 +9,7 @@
 
 FROM alpine
 
-RUN mkdir /build; cd /build && \
+RUN apk update && \
 apk add autoconf && \
 apk add automake && \
 apk add build-base && \
@@ -35,6 +35,7 @@ apk add ncurses && \
 apk add ncurses-dev && \
 apk add openssl-dev && \
 apk add readline-dev && \
+mkdir /build; cd /build && \
 git clone https://github.com/boothj5/libmesode.git && \
 git clone https://github.com/boothj5/profanity.git && \
 cd libmesode/ && \
